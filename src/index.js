@@ -1,7 +1,7 @@
 //192.168.178.84
 const Koa = require("koa");
 const Router  = require("koa-router");
-const { sleep, shutdown } = requrie("./shutdown.js");
+const { sleep, shutdown } = require("./utils/shutdown.js");
 
 const app = new Koa();
 const router= new Router();
@@ -18,5 +18,7 @@ router.get('/sleep', async (ctx, next) => {
     next();
 });
 
+app.use(router.routes())
+    .use(router.allowedMethods());
 
 app.listen(5050);

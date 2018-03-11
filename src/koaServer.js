@@ -2,7 +2,7 @@
 const Koa = require("koa");
 const Router = require("koa-router");
 const serve = require('koa-static');
-const wakeup = require('./wol.js');
+const wol = require('./utils/wol.js');
 
 const app = new Koa();
 const router = new Router();
@@ -10,12 +10,14 @@ const router = new Router();
 router.get('/wakeup', (ctx, next) => {
 
     console.log("wake up..");
-    wakeup.wakeup();
+    wol.wakeup();
     next();
 
 });
 
-app.use(router.routes());
-app.use(serve("../static/"));
+router.use("/", serve("../static/"));
+
+app.use(router.routes())
+    .use(router.allowedMethods());
 
 app.listen(8080);
