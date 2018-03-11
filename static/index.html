@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-    window.shutdown = function shutdown() {
-        fetch("http://192.168.178.84:5050/shutdown");
-    }
-    window.sleep= function shutdown() {
-        fetch("http://192.168.178.84:5050/sleep");
-    }
-    window.wakeup= function shutdown() {
-        fetch("http://192.168.178.63:8080/wakeup");
-    }
-</script>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<button onclick="shutdown()">shutdown</button>
-<button onclick="sleep()">sleep</button>
-<button onclick="wakeup()">wakeup</button>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .button {
+            text-transform: uppercase;
+            color: whitesmoke;
+            background-color: #26a69a;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+            text-decoration: none;
+            border: none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            height:36px;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+            min-width: 120px;
+            -webkit-transition: .3s ease-out;
+            -moz-transition: .3s ease-out;
+            -ms-transition: .3s ease-out;
+            -o-transition: .3s ease-out;
+            transition: .3s ease-out;
+        }
+        .button:hover {
+            background-color: #2bbbad;
+            -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+        }
 
-</body>
+        </style>
+    </head>
+    <body>
+        <button class="button" onclick="shutdown()" hidden="true">shutdown</button>
+        <button class="button" onclick="sleep()">sleep</button>
+        <button class="button" onclick="wakeup()">wakeup</button>
+
+        <script>
+            window.shutdown = function shutdown() {
+                fetch("http://192.168.178.84:5050/shutdown");
+            }
+            window.sleep= function shutdown() {
+                fetch("http://192.168.178.84:5050/sleep");
+            }
+            window.wakeup= function shutdown() {
+                fetch("http://192.168.178.63:8080/wakeup");
+            }
+        </script>
+    </body>
 </html>
