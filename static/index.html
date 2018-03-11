@@ -4,13 +4,21 @@
     window.shutdown = function shutdown() {
         fetch("http://192.168.178.84:8080/shutdown");
     }
+    window.sleep= function shutdown() {
+        fetch("http://192.168.178.84:8080/sleep");
+    }
+    window.wakeup= function shutdown() {
+        fetch("http://192.168.178.63:8080/wakeup");
+    }
 </script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<button onclick="shutdown()">Shutdown</button>
+<button onclick="shutdown()">shutdown</button>
+<button onclick="sleep()">sleep</button>
+<button onclick="wakeup()">wakeup</button>
 
 </body>
 </html>

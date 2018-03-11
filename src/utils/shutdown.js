@@ -1,7 +1,7 @@
 const { exec } = require ( 'child_process');
 
 function  shutdown () {
-    exec("shutdown /t 005", (err, stdout, stderr) => {
+    exec("shutdown /s /t 5", (err, stdout, stderr) => {
 
         if(err) {
             console.log("shutdown error", err);
