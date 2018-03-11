@@ -1,3 +1,21 @@
-var app = express();
+const Koa = require("koa");
+const Router  = require("koa-router");
+const { sleep, shutdown } = requrie("./shutdown.js");
 
-app.post('/power-off');
+const app = new Koa();
+const router= new Router();
+
+router.get('/shutdown', async (ctx, next) => {
+
+    shutdown();
+    next();
+});
+
+router.get('/sleep', async (ctx, next) => {
+
+    sleep();
+    next();
+});
+
+
+app.listen(5050);
