@@ -2,14 +2,14 @@
 const Koa = require("koa");
 const Router = require("koa-router");
 const serve = require('koa-static');
-const shutdown = require('./shutdown');
+const wakeup = require('./wol.js');
 
 const app = new Koa();
 const router = new Router();
 
-router.get('/sleep', (ctx, next) => {
+router.get('/wakeup', (ctx, next) => {
 
-    shutdown.sleep();
+    wakeup.wakeup();
     next();
 
 });
