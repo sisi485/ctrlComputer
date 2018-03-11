@@ -3,7 +3,6 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const serve = require('koa-static');
 const wol = require('./utils/wol.js');
-const cores = require('kcors');
 
 const app = new Koa();
 const router = new Router();
