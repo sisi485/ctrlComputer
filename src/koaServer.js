@@ -9,6 +9,7 @@ const router = new Router();
 
 router.get('/wakeup', (ctx, next) => {
 
+    console.log("wake up..");
     wakeup.wakeup();
     next();
 
