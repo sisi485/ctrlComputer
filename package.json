@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "kcors": "^2.2.1",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-router-static": "^1.2.0",
