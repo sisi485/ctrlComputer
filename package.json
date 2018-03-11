@@ -6,6 +6,7 @@
   "dependencies": {
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
+    "koa-router-static": "^1.2.0",
     "koa-static": "^4.0.2",
     "node-wol": "^0.1.1"
   },

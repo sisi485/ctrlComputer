@@ -15,10 +15,9 @@ router.get('/wakeup', (ctx, next) => {
 
 });
 
-router.use("/", serve("../static/"));
+app.use(serve("static/"));
 
-app.use(router.routes())
-    .use(router.allowedMethods())
-        .use(router.middleware());
+app.use(router.allowedMethods())
+    .use(router.routes());
 
 app.listen(8080);
